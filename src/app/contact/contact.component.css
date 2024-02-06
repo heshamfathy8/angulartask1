@@ -1,0 +1,17 @@
+.line{
+    width: 80px;
+    height: 5px;
+    /* background-color: ; */
+}
+.contact{
+    padding-bottom: 10%;
+    padding-top: 10% !important;
+}
+
+.contact form label{
+    color: #1abc9c;
+    margin-top: 5%;
+    top: 20px;
+    transition: .6s top;
+}
+
