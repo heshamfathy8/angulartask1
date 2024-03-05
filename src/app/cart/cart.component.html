@@ -1,0 +1,105 @@
+
+	<div class="cart-wrap ">
+		<div class="container">
+	        <div class="row">
+			    <div class="col-lg-8">
+					<div class="d-flex head justify-content-between">
+						<div class="main-heading">Shopping Cart</div>
+						<button class="btn btn-small btn-outline-danger" (click)="clear()">Clear All</button>
+					</div>
+			        <div class="table-cart">
+	                    <table>
+	                        <thead>
+	                            <tr>
+	                                <th class="ps-4">Product</th>
+									<th class="ps-4">Quantity</th>
+	                                <th class="ps-4">Total</th>
+	                            </tr>
+	                        </thead>
+	                        <tbody>
+
+								<!-- <div *ngIf="products.length > 0 else loading"> -->
+	                            <tr *ngFor="let p of products"  >
+	                                <td>
+	                                	<div class="display-flex align-center">
+		                                    <div class="img-product">
+		                                        <img [src]="p.product.imageCover"  alt="" class="mCS_img_loaded">
+		                                    </div>
+		                                    <div class="name-product">
+		                                       {{p.product.title}}
+		                                    </div>
+	                                    </div>
+	                                </td>
+	                                <td class="product-count">
+	                                    <form action="#" class="count-inlineflex">
+										    <div (click)="UpdateProductMinus(p.product._id,p.count)"class="qtyminus">-</div>
+										    <input type="text" name="quantity" [value]="p.count" class="qty">
+										    <div (click)="UpdateProductPlus(p.product._id,p.count)" class="qtyplus">+</div>
+										</form>
+	                                </td>
+	                                <td>
+	                                    <div class="total ">
+											{{p.price*p.count}} LE
+
+	                                    </div>
+										
+	                                </td>
+	                                <td>
+										<i  class="fa-solid fa-trash fa-lg text-danger" (click)="DeleteItem(p.product._id)"
+										></i>
+	                                </td>
+	                            </tr>
+								<!-- </div> -->
+	                          
+	                        </tbody>
+	                    </table>
+	                    
+			        </div>
+			        <!-- /.table-cart -->
+			    </div>
+			    <!-- /.col-lg-8 -->
+			    <div class="col-lg-4">
+			        <div class="cart-totals">
+			            <h3>Cart Totals</h3>
+			            <form action="#" method="get" accept-charset="utf-8">
+			                <table>
+			                    <tbody>
+			                        <tr>
+			                            <td>Subtotal</td>
+			                            <td class="subtotal">{{totalCartPrice}}</td>
+			                        </tr>
+			                        <tr>
+			                            <td>Shipping</td>
+			                            <td class="free-shipping">Free Shipping</td>
+			                        </tr>
+			                        <tr class="total-row">
+			                            <td>Total</td>
+			                            <td class="price-total">{{totalCartPrice}}</td>
+			                        </tr>
+			                    </tbody>
+			                </table>
+			                <div class="btn-cart-totals" disabled>
+			                    <a *ngIf="p_count&&totalCartPrice else checkout" [routerLink]='["/shoppingcart",pro_id]' class="checkout round-black-btn"
+								>Proceed to Checkout</a>
+			                </div>
+			                <!-- /.btn-cart-totals -->
+			            </form>
+			            <!-- /form -->
+			        </div>
+			        <!-- /.cart-totals -->
+			    </div>
+			    <!-- /.col-lg-4 -->
+			</div>
+		</div>
+	</div>
+	
+<ng-template #checkout>
+	<a  class="checkout round-black-btn bg-transparent text-dark"
+	>Proceed to Checkout</a>
+</ng-template>
+
+<ng-template #loading >
+    <div class="d-flex justify-content-center align-items-center">
+        <i class="fa-solid fa-spin fa-spinner text-main fa-5x my-5 py-5"></i>
+    </div>
+</ng-template>

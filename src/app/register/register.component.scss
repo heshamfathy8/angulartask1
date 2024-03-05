@@ -1,0 +1,24 @@
+@import "../../styles.scss";
+.register{
+    margin-top: 100px;
+}
+button{
+    background-color: var(--btn-bg-main) !important;
+}
+
+button:hover{
+    background-color: var(--btn-bg-hover) !important;
+    color: black !important;
+}
+@media (min-width :768px){
+     form {
+        width: 75% !important;
+        margin: auto;
+    }
+}
+@media (min-width:992px){
+     form {
+        width: 50% !important;
+    }
+
+}

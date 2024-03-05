@@ -1,0 +1,20 @@
+<div class="container-fluid box">
+    <div
+    *ngIf="categories.length > 0 else loading"
+        class="row  g-2"
+    >
+        <div class="col-md-3" *ngFor="let category of categories" (click)="getProduct(category._id)" >
+            <div class="card text-center">
+                <img class="w-100" [src]="category.image">
+                <h4 class="text-black fw-bold">{{category.name}}</h4>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<ng-template #loading >
+    <div class="d-flex justify-content-center align-items-center">
+        <i class="fa-solid fa-spin fa-spinner text-main fa-5x my-5 py-5"></i>
+    </div>
+</ng-template>

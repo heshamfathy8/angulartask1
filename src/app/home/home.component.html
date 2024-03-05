@@ -1,31 +1,56 @@
-<div
-  _ngcontent-fia-c17=""
-  class="home d-flex justify-content-center align-items-center text-white mt-5"
->
-  <div _ngcontent-fia-c17="" class="text-center">
-    <img
-      _ngcontent-fia-c17=""
-      src="https://routeegy.github.io/startFramework/assets/images/avataaars.svg"
-      alt=""
-      class="my-3 w-75"
-    />
-    <div _ngcontent-fia-c17="" _nghost-fia-c6="" >
-      <div _ngcontent-fia-c6="" class="text-center pt-4" style="color: white">
-        <h2 _ngcontent-fia-c6="" class="text-uppercase mb-3 fs-1 fw-bolder">
-          start Framework
-        </h2>
-        <div _ngcontent-fia-c6=""
-          class="d-flex align-items-center justify-content-center mb-3" >
-          <div _ngcontent-fia-c6="" class="line me-3" style="background-color: white" ></div>
-          <i _ngcontent-fia-c6="" class="fa-solid fa-star"></i>
-          <div
-            _ngcontent-fia-c6=""
-            class="line ms-3"
-            style="background-color: white"
-          ></div>
+
+
+
+<div class="row gx-0 my-5 banner">
+    <div class="col-md-8 ">
+        <div class="h-100 s1">
+            <img src="assets/finalProject assets/banner-4.jpeg" alt="" class="w-100 ">
         </div>
-      </div>
     </div>
-    <div _ngcontent-fia-c17="">Graphic Artist - Web Designer - Illustrator</div>
-  </div>
+    <div class="col-md-4 s2">
+        <div >
+            <img src="assets/finalProject assets/slider-image-1.jpeg" alt="" class="w-100 ">
+        </div>
+        <div>
+            <img src="assets/finalProject assets/slider-image-2.jpeg" alt="" class="w-100 ">
+        </div>
+    </div>
 </div>
+
+  <app-slider [CategoriesArray]="Categories"></app-slider>
+
+    <input type="search" class="w-50 mx-auto my-5 form-control" placeholder="Search...." [(ngModel)]="searchword" >
+
+<div *ngIf="products.length > 0 else loading" class="row">
+    <div *ngFor="let product of products|search:searchword"   class="col-md-2">
+
+
+        <div  class="product p-1">
+            <div class="text-end">
+            <i class="fa-regular fa-heart fa-lg text-main " (click)="AddOrDel($event,product._id)"></i>
+             </div>
+            <img [src]="product.imageCover" alt="" class="w-100" [routerLink]="['/productdetails',product._id]">
+            <p class="mt-2">{{product.category.name}}</p>
+            <h6>{{product.title}}</h6>
+            <div class="d-flex justify-content-between">
+                <p>{{product.price}} EGP </p>
+                <p>{{product.ratingsAverage}}
+                    <i class="fa-solid fa-star rating-color"></i>
+                </p>
+            </div>
+            <div class="text-center">
+                <button class="btn bg-main" (click)="addToCart(product._id)">Add To Card +</button>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+
+
+<ng-template #loading >
+    <div class="d-flex justify-content-center align-items-center">
+        <i class="fa-solid fa-spin fa-spinner text-main fa-5x my-5 py-5"></i>
+    </div>
+</ng-template>

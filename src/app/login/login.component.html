@@ -1,0 +1,26 @@
+<div class=" mx-auto p-5 login">
+
+        <form [formGroup]="Loginform" (ngSubmit)="signIn(Loginform)">
+            <h1 class="mb-5">Login Now :</h1>
+
+            <label for="" class="form-label">Email</label>
+            <input formControlName="email" type="email" class="form-control"  required />
+            <p class="text-danger" *ngIf="Loginform.get('email')?.getError('required')&& Loginform.get('email')?.touched"> please fill out the field</p>
+            <p class="text-danger" *ngIf="Loginform.get('email')?.getError('email')&& Loginform.get('email')?.touched"> write a correct Email </p>
+
+            <label for="" class="form-label">Password</label>
+            <input formControlName="password" type="password" class="form-control"  required />
+            <p class="text-danger" *ngIf="Loginform.get('password')?.getError('required')&& Loginform.get('password')?.touched"> please fill out the field></p>
+            <p class="text-danger" *ngIf="Loginform.get('password')?.getError('pattern')">password must start with capital letter and between 9-11 character</p>
+
+            <div class="d-flex justify-content-between align-items-center">
+            <button class="btn  my-3" *ngIf="apiResponse else Loading" >Login</button>
+            <a class="link" routerLink="/forgetpassword">Forget Password</a>
+             </div>
+            <ng-template #Loading>
+                <button class="btn bg-main my-3"><i class="fa-solid fa-spinner fa-spin"></i></button>
+            </ng-template>
+            <h6 [ngClass]="apiResponse == 'success'? 'text-success':'text-danger'">{{apiResponse}}</h6>
+        </form>
+</div>
+

@@ -1,0 +1,15 @@
+
+@import "../../styles.scss";
+
+.box{
+    margin-block: 150px !important;
+}
+
+button{
+    background-color: var(--btn-bg-main);
+}
+
+button:hover{
+    background-color: var(--btn-bg-hover) ;
+    color: var(--btn-hover);
+}

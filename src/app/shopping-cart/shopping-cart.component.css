@@ -1,0 +1,11 @@
+form{
+    margin-block: 150px;
+}
+button{
+    background-color: var(--btn-bg-main) !important;
+}
+
+button:hover{
+    background-color: var(--btn-bg-hover) !important;
+    color: black !important;
+}

@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app2';
+  theme =document.documentElement.getAttribute('data-theme')
+  
 }

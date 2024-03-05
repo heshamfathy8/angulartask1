@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-footing',
@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./footing.component.css']
 })
 export class FootingComponent {
-
+  
 }

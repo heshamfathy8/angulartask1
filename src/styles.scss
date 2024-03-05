@@ -1,0 +1,119 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded:wght@300&display=swap');
+@import "app/navbar/navbar.component.scss";
+
+
+:root{
+    
+    --bg-color: white;
+    --color-main-text: black;
+    --main-color: #0aad0a;
+    --light-color: #f0f3f2;
+    --shadow: rgba(145, 158, 171, .2) 0px 2px 4px -1px, rgba(145, 158, 171, .14) 0px 4px 5px 0px, rgba(145, 158, 171, .12) 0px 1px 10px 0px;
+    --font-family: 'Encode Sans Expanded', sans-serif;
+    --rating-color: #ffc908;
+    
+    --btn-bg-main: #0aad0a;
+    --btn-bg-hover: #0aad0a;
+    --btn-main:  black;
+    --btn-hover: white;
+    
+    --btn-dark : --main-color ;
+    --btn-dark-hover: transparent ;
+    --btn-bg-dark-cart :  #212529;
+    --btn-dark-cart:black;
+    --btn-dark-cart-hover:black;
+    --cart-total:#e7e7e7;
+    --cart-color:black;
+}
+    
+    // dark
+    :root:has(.box_3 input:checked){
+    --btn-dark: #626a71 ;
+    --btn-dark-hover:#9c9c9c ;
+    --btn-bg-dark-cart :#212529;
+    --btn-dark-cart:white;
+    --btn-dark-cart-hover:black;
+    --cart-total:#323436;
+    
+    --btn-bg-main: #626a71;
+    --btn-bg-hover: #9c9c9c;
+    --btn-main:  black;
+    --btn-hover: black;
+    
+    --bg-color: #212529;
+    --color-main-text:#DEE2E6;
+    --main-color: #0aad0a;
+    --light-color: #f0f3f2;
+    --shadow: rgba(145, 158, 171, .2) 0px 2px 4px -1px, rgba(145, 158, 171, .14) 0px 4px 5px 0px, rgba(145, 158, 171, .12) 0px 1px 10px 0px;
+    --font-family: 'Encode Sans Expanded', sans-serif;
+    --rating-color: #ffc908;
+    
+}
+    
+
+
+body {
+    font-family: var(--font-family) !important;
+    background-color: var(--bg-color);
+    color: 
+    var(--color-main-text)
+    ;
+}
+h2{
+    color: var(--color-main-text);
+}
+
+.rating-color {
+    color: var(--rating-color);
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+a,
+a:hover {
+    color: black;
+    text-decoration: none;
+}
+
+.product:hover {
+    box-shadow:  1px 1px 20px #4fa74f;
+    border: solid 1px var(--main-color);
+}
+
+.product .btn {
+    transition: transform 1s, opacity 1s;
+    transform: translateY(100%);
+    opacity: 0;
+}
+
+.product:hover .btn {
+    opacity: 1;
+    transform: translateY(0%);
+}
+
+.font-sm {
+    font-size: 14px;
+}
+
+.text-main {
+    color: var(--main-color);
+}
+
+.bg-main {
+    background-color: var(--main-color) !important;
+}
+
+.bg-main-light {
+    background-color: var(--light-color) !important;
+}
+.toast-top-right {
+    top: 85px !important;
+    right: 12px;
+  }
+
+ 
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

@@ -1,0 +1,36 @@
+
+<div *ngIf="products.length > 0 else loading " class="row box">
+    <div *ngFor="let product of products|search:searchword"   class="col-md-2">
+
+
+        <div  class="product p-1">
+            <div class="text-end">
+                <i class="fa-regular fa-solid fa-heart fa-lg text-main " (click)="DeleteProduct($event,product._id)"></i>
+            </div>
+            <img [src]="product.imageCover" alt="" class="w-100" [routerLink]="['/productdetails',product._id]">
+            <p>{{product.category.name}}</p>
+            <h6>{{product.title}}</h6>
+            <div class="d-flex justify-content-between">
+                <p>{{product.price}} EGP </p>
+                <p>{{product.ratingsAverage}}
+                    <i class="fa-solid fa-star rating-color"></i>
+                </p>
+            </div>
+            <div class="text-center">
+                <button class="btn bg-main" (click)="addToCart(product._id)">Add To Card +</button>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+
+
+<ng-template #loading >
+    <div class="d-flex justify-content-center align-items-center my-5 ">
+        <i class="fa-solid fa-spin fa-spinner text-main fa-5x my-5 py-5"></i>
+    </div>
+</ng-template>
+
+

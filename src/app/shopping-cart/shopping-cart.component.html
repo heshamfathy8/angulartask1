@@ -1,0 +1,14 @@
+<form [formGroup]="shoppingCartForm" (ngSubmit)="payment(shoppingCartForm)" >
+
+    <label  class="form-label">Details</label>
+    <input formControlName="Details" type="text" class="form-control" required />
+    
+    <label  class="form-label">Phone</label>
+    <input formControlName="Phone" type="text" class="form-control" required />
+
+    <label  class="form-label">City</label>
+    <input formControlName="City" type="text" class="form-control" required />
+
+    <button  class="btn bg-main my-3">Submit</button>
+
+</form>

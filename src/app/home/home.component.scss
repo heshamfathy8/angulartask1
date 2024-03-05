@@ -1,0 +1,24 @@
+// @import'../../styles.scss';
+
+.banner{
+    margin-top: 80px !important;
+
+}
+.banner .s2 img{
+    height: 97px !important;
+}
+
+ng-container ng-template .carsoul img {
+    display: inline-block !important;
+    width: 100%;
+    height: 263px !important;
+}
+
+.btn:hover{
+color: white;
+}
+
+.row{
+    // background-color: var(--bar);
+    background-color: var(--bar);
+}
